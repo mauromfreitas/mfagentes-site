@@ -151,11 +151,7 @@
   .cred p + p { font-size: 1.05rem; color: var(--sage-light); margin-top: 18px; font-weight: 400; max-width: 52ch; }
 
   /* Apps */
-  .apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 1100px) {
-    .apps-grid { grid-template-columns: 1fr 1fr; }
-    .apps-grid .app:last-child { grid-column: 1 / -1; }
-  }
+  .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .app .btn { white-space: nowrap; }
   .badge { display: inline-block; font-size: 0.85rem; font-weight: 600; color: var(--sage-deep); background: var(--paper-2); border-radius: 999px; padding: 5px 12px; line-height: 1.3; align-self: flex-start; }  .app { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; }
   .app-top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
@@ -299,7 +295,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="apps">Veja o que já construímos</h2>
-        <p>Aplicativos simples de usar e com assinatura acessível, alguns já disponíveis e outros em piloto. É o mesmo cuidado que levamos para os projetos dos nossos clientes.</p>
+        <p>Aplicativos simples de usar, gratuitos ou com assinatura acessível, alguns já disponíveis e outros em piloto. É o mesmo cuidado que levamos para os projetos dos nossos clientes.</p>
       </div>
       <div class="apps-grid">
         <article class="app">
@@ -322,6 +318,17 @@
           <div class="app-price">
             <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
             <a class="btn btn-ghost" href="https://nossolar.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
+          </div>
+        </article>
+        <article class="app">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h16v2a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7zM2 11h2M20 11h2M9 4c0 1.5-1 1.5-1 3M13 4c0 1.5-1 1.5-1 3M17 4c0 1.5-1 1.5-1 3"/></svg></span>
+            <div><h3>Cozinha Compartilhada</h3><span class="app-for">Receitas da família e dos amigos</span></div>
+          </div>
+          <p>Guarde suas receitas com lista de compras e modo de preparo, compartilhe pelo WhatsApp ou na comunidade e salve na sua cozinha as receitas favoritas de outras pessoas.</p>
+          <div class="app-price">
+            <div class="price"><strong>Grátis</strong><small>sem assinatura</small></div>
+            <a class="btn btn-ghost" href="https://cozinhacompartilhada.mfagentes.com.br" target="_blank" rel="noopener">Começar grátis</a>
           </div>
         </article>
         <article class="app">
