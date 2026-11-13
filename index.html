@@ -175,6 +175,8 @@
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
   .footer-mail { color: var(--sage-deep); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--sage-light); }
   .footer-mail:hover { border-color: var(--sage-deep); }
+  .footer-cookies { font: inherit; color: var(--ink-soft); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .footer-cookies:hover { color: var(--ink); }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -200,6 +202,7 @@
     .app-price { flex-direction: column; align-items: stretch; }
   }
 </style>
+<script src="/analytics.js" defer></script>
 </head>
 <body>
 
@@ -364,6 +367,7 @@
   <div class="wrap">
     <span>© 2026 MF Agentes. Atendimento 100% remoto para todo o Brasil.</span>
     <span>Contato: <a class="footer-mail" href="mailto:suporte@mfagentes.com.br">suporte@mfagentes.com.br</a></span>
+    <button type="button" class="footer-cookies" onclick="window.mfCookiePreferences && window.mfCookiePreferences()">Preferências de cookies</button>
   </div>
 </footer>
 
