@@ -67,8 +67,9 @@
     var href = a.getAttribute('href') || '';
     var label = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
     if (/wa\.me|whatsapp\.com/i.test(href)) {
-      if (/piloto/i.test(decodeURIComponent(href))) {
-        gtag('event', 'piloto_carteira', { link_text: label, page_host: host });
+      var waText = decodeURIComponent(href);
+      if (/piloto/i.test(waText)) {
+        gtag('event', /estoque/i.test(waText) ? 'piloto_estoque' : 'piloto_carteira', { link_text: label, page_host: host });
       } else {
         gtag('event', 'contato_whatsapp', { link_text: label, page_host: host });
       }

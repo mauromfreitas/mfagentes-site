@@ -165,6 +165,48 @@
   .price small { display: block; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.3; }
   .app .btn { padding: 12px 22px; }
 
+  .apps-grid > .app:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+  /* Video teaser in app cards */
+  .app-video {
+    display: flex; align-items: center; gap: 14px; width: 100%; margin: 0 0 22px;
+    padding: 8px 14px 8px 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    font: inherit; color: var(--ink); text-align: left; cursor: pointer;
+    transition: border-color .2s ease, background-color .2s ease;
+  }
+  .app-video:hover { border-color: var(--sage); background: var(--paper-2); }
+  .app-video-thumb { position: relative; width: 54px; height: 96px; border-radius: 10px; overflow: hidden; flex: none; background: var(--ink); }
+  .app-video-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .app-video-thumb::after { content: ""; position: absolute; inset: 0; background: rgba(29, 39, 33, .35); }
+  .app-video-play { position: absolute; z-index: 1; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: var(--white); display: grid; place-items: center; }
+  .app-video-play svg { width: 12px; height: 12px; margin-left: 2px; fill: var(--sage-deep); }
+  .app-video strong { display: block; font-weight: 700; line-height: 1.3; }
+  .app-video small { color: var(--ink-soft); font-size: 0.88rem; }
+
+  .hero-video-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; font-weight: 600; color: var(--sage-deep); text-decoration: none; border-bottom: 2px solid var(--sage-light); padding-bottom: 2px; }
+  .hero-video-link:hover { border-color: var(--sage-deep); }
+  .hero-video-link svg { width: 14px; height: 14px; fill: currentColor; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  #apps { scroll-margin-top: 24px; }
+
+  /* Video modal */
+  .vmodal { position: fixed; inset: 0; z-index: 2147482000; display: none; align-items: center; justify-content: center; background: rgba(14, 20, 16, .88); padding: 20px; }
+  .vmodal.open { display: flex; }
+  .vmodal-box { position: relative; height: min(88vh, 860px); aspect-ratio: 9 / 16; max-width: 100%; border-radius: 22px; overflow: hidden; background: #000; box-shadow: 0 40px 100px -30px rgba(0,0,0,.7); }
+  .vmodal video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
+  .vmodal-close { position: absolute; top: 12px; right: 12px; z-index: 3; width: 42px; height: 42px; border-radius: 50%; border: 0; background: rgba(255,255,255,.92); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+  .vmodal-close svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.4; fill: none; stroke-linecap: round; }
+  .vmodal-end { position: absolute; inset: 0; z-index: 2; display: none; flex-direction: column; align-items: center; justify-content: flex-end; gap: 12px; padding: 28px 22px 48px; background: linear-gradient(to top, rgba(14,20,16,.94), rgba(14,20,16,.35) 55%, transparent); }
+  .vmodal-end.show { display: flex; }
+  .vmodal-end .btn { width: 100%; max-width: 320px; }
+  .vmodal-end .btn-primary { background: var(--sage-light); color: var(--ink); }
+  .vmodal-end .btn-primary:hover { background: var(--white); }
+  .vmodal-replay { font: inherit; font-weight: 600; color: var(--white); background: none; border: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 520px) {
+    .vmodal { padding: 0; }
+    .vmodal-box { height: 100%; width: 100%; aspect-ratio: auto; border-radius: 0; }
+  }
+
   /* Final CTA */
   .final { padding: 110px 0 120px; text-align: left; }
   .final .wrap { display: grid; grid-template-columns: 1.2fr auto; gap: 40px; align-items: end; }
@@ -229,6 +271,7 @@
           </a>
           <span class="hero-note">A primeira conversa é sem compromisso.</span>
         </div>
+        <a class="hero-video-link" href="#apps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Veja nossos apps em 20 segundos</a>
       </div>
 
       <div class="board" aria-label="Exemplo de semana organizada">
@@ -307,6 +350,10 @@
             <div><h3>Nosso Bolso Junto</h3><span class="app-for">Finanças do casal e da família</span></div>
           </div>
           <p>Contas, receitas e vencimentos da casa em um só lugar, com lembretes antes do dia de pagar e um painel do mês para os dois acompanharem juntos.</p>
+          <button type="button" class="app-video" data-video="nossobolso" data-title="Nosso Bolso Junto" data-cta="Experimente grátis" data-cta-href="https://nossobolso.mfagentes.com.br">
+            <span class="app-video-thumb"><img src="/videos/nossobolso.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
           <div class="app-price">
             <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
             <a class="btn btn-ghost" href="https://nossobolso.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
@@ -318,6 +365,10 @@
             <div><h3>Nosso Lar Junto</h3><span class="app-for">Rotina da casa compartilhada</span></div>
           </div>
           <p>Tarefas divididas, lista de compras e manutenções da casa com lembrete. Com IA: fotografe a geladeira, os armários ou a lavanderia e a Despensa monta o inventário do que tem em casa; fotografe a nota fiscal e o Nota Fácil guarda os dados e avisa antes de a garantia vencer.</p>
+          <button type="button" class="app-video" data-video="nossolar" data-title="Nosso Lar Junto" data-cta="Experimente grátis" data-cta-href="https://nossolar.mfagentes.com.br">
+            <span class="app-video-thumb"><img src="/videos/nossolar.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
           <div class="app-price">
             <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
             <a class="btn btn-ghost" href="https://nossolar.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
@@ -345,6 +396,21 @@
             <a class="btn btn-ghost" href="https://wa.me/551131974420?text=Ol%C3%A1!%20Sou%20s%C3%ADndico%20e%20quero%20participar%20do%20piloto%20da%20Carteira%20Predial." target="_blank" rel="noopener">Quero participar do piloto</a>
           </div>
         </article>
+        <article class="app">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>
+            <div><h3>Estoque Inteligente</h3><span class="app-for">Para pequenos negócios</span></div>
+          </div>
+          <p>Fotografe a nota fiscal ou a prateleira e a IA lê os itens para você confirmar. O estoque se atualiza sozinho e a lista de compras sai pronta, com o custo estimado.</p>
+          <button type="button" class="app-video" data-video="estoque" data-title="Estoque Inteligente" data-cta="Quero participar do piloto" data-cta-href="https://wa.me/551131974420?text=Ol%C3%A1!%20Tenho%20um%20pequeno%20neg%C3%B3cio%20e%20quero%20participar%20do%20piloto%20do%20Estoque%20Inteligente.">
+            <span class="app-video-thumb"><img src="/videos/estoque.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <span class="badge">Em breve, piloto em andamento</span>
+            <a class="btn btn-ghost" href="https://wa.me/551131974420?text=Ol%C3%A1!%20Tenho%20um%20pequeno%20neg%C3%B3cio%20e%20quero%20participar%20do%20piloto%20do%20Estoque%20Inteligente." target="_blank" rel="noopener">Quero participar do piloto</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -370,6 +436,63 @@
     <button type="button" class="footer-cookies" onclick="window.mfCookiePreferences && window.mfCookiePreferences()">Preferências de cookies</button>
   </div>
 </footer>
+
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="Vídeo do aplicativo" hidden>
+  <div class="vmodal-box">
+    <video id="vmodal-video" playsinline controls preload="none"></video>
+    <button type="button" class="vmodal-close" aria-label="Fechar vídeo"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="vmodal-end" id="vmodal-end">
+      <a class="btn btn-primary" id="vmodal-cta" href="#" target="_blank" rel="noopener">Experimente grátis</a>
+      <button type="button" class="vmodal-replay" id="vmodal-replay">Assistir de novo</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('vmodal');
+  var video = document.getElementById('vmodal-video');
+  var end = document.getElementById('vmodal-end');
+  var cta = document.getElementById('vmodal-cta');
+  var closeBtn = modal.querySelector('.vmodal-close');
+  var current = null, opener = null, sent = {};
+  function track(name, extra) {
+    if (typeof window.gtag !== 'function' || !current) return;
+    var p = { app_name: current }; for (var k in extra || {}) p[k] = extra[k];
+    window.gtag('event', name, p);
+  }
+  function open(btn) {
+    opener = btn; current = btn.getAttribute('data-video'); sent = {};
+    video.src = '/videos/' + current + '.mp4';
+    video.poster = '/videos/' + current + '.jpg';
+    modal.setAttribute('aria-label', 'Vídeo: ' + btn.getAttribute('data-title'));
+    cta.textContent = btn.getAttribute('data-cta');
+    cta.href = btn.getAttribute('data-cta-href');
+    end.classList.remove('show'); video.controls = true;
+    modal.hidden = false; modal.classList.add('open');
+    document.documentElement.style.overflow = 'hidden';
+    closeBtn.focus();
+    var p = video.play(); if (p && p.catch) p.catch(function () {});
+    track('video_play');
+  }
+  function close() {
+    video.pause(); video.removeAttribute('src'); video.load();
+    modal.classList.remove('open'); modal.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (opener) opener.focus();
+    current = null;
+  }
+  document.querySelectorAll('.app-video').forEach(function (b) { b.addEventListener('click', function () { open(b); }); });
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  video.addEventListener('timeupdate', function () {
+    if (!sent.half && video.duration && video.currentTime / video.duration >= 0.5) { sent.half = 1; track('video_50'); }
+  });
+  video.addEventListener('ended', function () { track('video_complete'); video.controls = false; end.classList.add('show'); cta.focus(); });
+  document.getElementById('vmodal-replay').addEventListener('click', function () { end.classList.remove('show'); video.controls = true; video.currentTime = 0; video.play(); });
+  cta.addEventListener('click', function () { track('video_cta'); });
+})();
+</script>
 
 </body>
 </html>
