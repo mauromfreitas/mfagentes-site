@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como instalar o app no celular | MF Agentes</title>
+<meta name="description" content="Passo a passo para instalar os apps da MF Agentes no celular, no Android e no iPhone, em qualquer navegador.">
+<link rel="canonical" href="https://mfagentes.com.br/instalar/">
+<meta name="theme-color" content="#2E4236">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E4236'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' fill='none' stroke='%23C9D8C5' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F1; --paper-2: #E7ECE4; --ink: #1D2721; --ink-soft: #4A564E;
+    --sage: #7E9C85; --sage-deep: #2E4236; --sage-light: #C9D8C5; --line: #D3DBD0; --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--sage-deep); }
+  :focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 22px 0; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
+  .brand svg { width: 28px; height: 28px; }
+  .back { font-weight: 600; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid var(--sage-light); padding: 6px 0; }
+
+  .intro { padding: 28px 0 8px; }
+  h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.05; letter-spacing: -0.035em; font-weight: 800; margin: 0 0 16px; max-width: 18ch; }
+  .lead { color: var(--ink-soft); font-size: 1.12rem; margin: 0; max-width: 54ch; }
+
+  .tabs { display: inline-flex; background: var(--paper-2); border-radius: 999px; padding: 5px; margin: 32px 0 8px; gap: 4px; }
+  .tab { font: inherit; font-weight: 700; font-size: 1rem; border: 0; background: transparent; color: var(--ink-soft); padding: 10px 22px; border-radius: 999px; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--sage-deep); color: var(--white); }
+  .detected { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 20px; min-height: 1.4em; }
+
+  .note { background: var(--sage-deep); color: var(--white); border-radius: 18px; padding: 18px 20px; margin: 0 0 20px; }
+  .note strong { color: var(--sage-light); }
+  .note p { margin: 0; }
+  .tip { background: var(--white); border: 1px solid var(--line); border-left: 5px solid var(--sage); border-radius: 14px; padding: 16px 18px; margin: 0 0 20px; }
+  .tip p { margin: 0; }
+
+  details { background: var(--white); border: 1px solid var(--line); border-radius: 18px; margin: 0 0 12px; }
+  summary { list-style: none; cursor: pointer; padding: 18px 20px; font-weight: 700; font-size: 1.08rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 1.5rem; font-weight: 500; color: var(--sage-deep); line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  summary small { display: block; font-weight: 500; font-size: 0.88rem; color: var(--ink-soft); }
+  .steps { margin: 0; padding: 0 20px 20px 46px; }
+  .steps li { margin: 0 0 10px; padding-left: 4px; }
+  .steps li:last-child { margin-bottom: 0; }
+  .key { display: inline-block; font-weight: 700; background: var(--paper-2); border-radius: 8px; padding: 0 8px; white-space: nowrap; }
+
+  .help { margin: 40px 0 0; padding: 28px 0 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 0 0 14px; }
+  .help ul { margin: 0; padding-left: 20px; }
+  .help li { margin: 0 0 12px; }
+  .contact { margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; font: inherit; font-weight: 700; text-decoration: none; padding: 13px 24px; border-radius: 999px; background: var(--sage-deep); color: var(--white); }
+  .btn:hover { background: var(--ink); }
+
+  footer { margin-top: 56px; border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: 0.9rem; color: var(--ink-soft); }
+  [hidden] { display: none !important; }
+  @media (max-width: 520px) { .wrap { padding: 0 16px; } .tabs { display: flex; } .tab { flex: 1; padding: 10px 8px; } .steps { padding-left: 40px; } }
+</style>
+<script src="/analytics.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="MF Agentes, página inicial">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2E4236"/><path d="M9 16.5l4.5 4.5L23 11.5" fill="none" stroke="#C9D8C5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      MF Agentes
+    </a>
+    <a class="back" id="back" href="/">Voltar ao site</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1 id="title">Instale o app no seu celular</h1>
+    <p class="lead">Leva menos de um minuto. O app ganha um ícone na tela inicial, abre em tela cheia como qualquer outro aplicativo e, no iPhone, passa a receber notificações.</p>
+  </section>
+
+  <div class="tabs" role="tablist" aria-label="Escolha o seu celular">
+    <button class="tab" role="tab" id="tab-android" aria-controls="android" aria-selected="true">Android</button>
+    <button class="tab" role="tab" id="tab-iphone" aria-controls="iphone" aria-selected="false">iPhone</button>
+  </div>
+  <p class="detected" id="detected" aria-live="polite"></p>
+
+  <section id="android" role="tabpanel" aria-labelledby="tab-android">
+    <div class="tip"><p><strong>Jeito mais rápido:</strong> com o app aberto, procure o aviso <span class="key">Instalar app</span> na parte de baixo da tela ou um ícone de instalar na barra de endereço. Se aparecer, é só tocar nele e confirmar.</p></div>
+
+    <details open>
+      <summary><span>Google Chrome<small>O navegador padrão da maioria dos celulares Android</small></span></summary>
+      <ol class="steps">
+        <li>Abra o app no Chrome.</li>
+        <li>Toque nos <span class="key">⋮</span> três pontinhos, no canto superior direito.</li>
+        <li>Toque em <span class="key">Instalar app</span>. Se não aparecer, toque em <span class="key">Adicionar à tela inicial</span> e escolha <span class="key">Instalar</span>.</li>
+        <li>Confirme. O ícone aparece na tela inicial e na lista de aplicativos.</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary><span>Samsung Internet<small>O navegador que já vem nos celulares Samsung</small></span></summary>
+      <ol class="steps">
+        <li>Abra o app no Samsung Internet.</li>
+        <li>Se aparecer um ícone de instalar na barra de endereço, toque nele e confirme. Pronto.</li>
+        <li>Se não aparecer, toque no menu <span class="key">≡</span>, no canto inferior direito.</li>
+        <li>Toque em <span class="key">Adicionar página a</span> e depois em <span class="key">Tela inicial</span>.</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary><span>Microsoft Edge ou Brave</span></summary>
+      <ol class="steps">
+        <li>Abra o app no navegador.</li>
+        <li>Toque no menu <span class="key">⋯</span> ou <span class="key">⋮</span>.</li>
+        <li>Toque em <span class="key">Instalar app</span> ou <span class="key">Adicionar ao telefone</span> e confirme.</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary><span>Mozilla Firefox</span></summary>
+      <ol class="steps">
+        <li>Abra o app no Firefox.</li>
+        <li>Toque nos <span class="key">⋮</span> três pontinhos.</li>
+        <li>Toque em <span class="key">Instalar</span> ou <span class="key">Adicionar à tela inicial</span> e confirme.</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary><span>Opera</span></summary>
+      <ol class="steps">
+        <li>Abra o app no Opera.</li>
+        <li>Toque no menu (três pontinhos ou o ícone do Opera, embaixo).</li>
+        <li>Toque em <span class="key">Adicionar a</span> e depois em <span class="key">Tela inicial</span>.</li>
+      </ol>
+    </details>
+  </section>
+
+  <section id="iphone" role="tabpanel" aria-labelledby="tab-iphone" hidden>
+    <div class="note"><p><strong>Importante:</strong> no iPhone, os avisos do app (vencimentos, lembretes e novidades) só chegam depois que ele é adicionado à Tela de Início. Pelo navegador comum, o iPhone não entrega as notificações.</p></div>
+
+    <details open>
+      <summary><span>Safari<small>O navegador padrão do iPhone, recomendado</small></span></summary>
+      <ol class="steps">
+        <li>Abra o app no Safari.</li>
+        <li>Toque no botão <span class="key">Compartilhar</span> (o quadrado com a seta para cima). Nas versões mais novas do iPhone, ele fica dentro do menu <span class="key">•••</span> da barra.</li>
+        <li>Role as opções para baixo e toque em <span class="key">Adicionar à Tela de Início</span>.</li>
+        <li>Se aparecer a opção <span class="key">Abrir como App Web</span>, deixe ligada.</li>
+        <li>Toque em <span class="key">Adicionar</span>, no canto superior direito.</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary><span>Chrome, Edge ou Firefox<small>Funciona a partir do iOS 16.4</small></span></summary>
+      <ol class="steps">
+        <li>Abra o app no navegador.</li>
+        <li>Toque no botão <span class="key">Compartilhar</span>. No Chrome, ele fica na barra de endereço, no alto; no Edge e no Firefox, fica dentro do menu.</li>
+        <li>Toque em <span class="key">Adicionar à Tela de Início</span> e depois em <span class="key">Adicionar</span>.</li>
+      </ol>
+    </details>
+
+    <div class="tip"><p><strong>iPhone com sistema anterior ao iOS 16.4?</strong> Nesse caso só o Safari consegue instalar. Abra o app no Safari e siga os passos acima. Para ver a versão: Ajustes › Geral › Sobre.</p></div>
+  </section>
+
+  <section class="help">
+    <h2>Não encontrou a opção?</h2>
+    <ul>
+      <li><strong>Abriu o link pelo WhatsApp, Instagram ou Facebook?</strong> Esses apps usam um navegador próprio que não instala. Toque nos três pontinhos e escolha <span class="key">Abrir no navegador</span> (ou no Safari, no iPhone) e tente de novo.</li>
+      <li><strong>Está em uma aba anônima?</strong> Abra o app numa aba normal.</li>
+      <li><strong>Já instalou?</strong> Procure o ícone na tela inicial ou na lista de aplicativos. Quando o app já está instalado, a opção de instalar some do menu.</li>
+    </ul>
+    <div class="contact">
+      <a class="btn" href="https://wa.me/551131974420?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20app%20no%20celular." target="_blank" rel="noopener">Pedir ajuda no WhatsApp</a>
+      <span>ou escreva para <a href="mailto:suporte@mfagentes.com.br">suporte@mfagentes.com.br</a></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 MF Agentes. Atendimento 100% remoto para todo o Brasil.</div>
+</footer>
+
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+
+  // Nome do app e link de volta (só para endereços dos apps da MF Agentes).
+  var app = (params.get('app') || '').replace(/[<>]/g, '').slice(0, 60).trim();
+  if (app) {
+    document.getElementById('title').textContent = 'Instale o ' + app + ' no seu celular';
+    document.title = 'Como instalar o ' + app + ' no celular | MF Agentes';
+  }
+  var volta = params.get('volta');
+  try {
+    var u = volta ? new URL(volta) : null;
+    if (u && u.protocol === 'https:' && /(^|\.)mfagentes\.com\.br$|\.base44\.app$/.test(u.hostname)) {
+      var back = document.getElementById('back');
+      back.href = u.href;
+      back.textContent = app ? 'Voltar ao ' + app : 'Voltar ao app';
+    }
+  } catch (e) {}
+
+  // Abas.
+  var tabs = { android: document.getElementById('tab-android'), iphone: document.getElementById('tab-iphone') };
+  function show(which) {
+    ['android', 'iphone'].forEach(function (k) {
+      var on = k === which;
+      tabs[k].setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById(k).hidden = !on;
+    });
+  }
+  tabs.android.addEventListener('click', function () { show('android'); history.replaceState(null, '', '#android'); });
+  tabs.iphone.addEventListener('click', function () { show('iphone'); history.replaceState(null, '', '#iphone'); });
+
+  // Escolhe a aba pelo endereço (#iphone / #android) ou pelo aparelho.
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/.test(ua);
+  var hash = location.hash.replace('#', '');
+  var initial = hash === 'iphone' || hash === 'android' ? hash : (isIOS ? 'iphone' : 'android');
+  show(initial);
+  var det = document.getElementById('detected');
+  if (isIOS) det.textContent = 'Identificamos um iPhone. Os passos abaixo já são para ele.';
+  else if (isAndroid) det.textContent = 'Identificamos um Android. Os passos abaixo já são para ele.';
+
+  // No Android, abre o navegador certo já expandido.
+  if (initial === 'android' && /SamsungBrowser/.test(ua)) {
+    var all = document.querySelectorAll('#android details');
+    all.forEach(function (d) { d.open = false; });
+    all[1].open = true;
+  }
+})();
+</script>
+</body>
+</html>
