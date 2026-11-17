@@ -44,8 +44,12 @@
   function isStandalone() {
     return window.matchMedia('(display-mode: standalone)').matches ||
       window.matchMedia('(display-mode: fullscreen)').matches ||
-      window.navigator.standalone === true;
+      window.navigator.standalone === true ||
+      window.__BASE44_NATIVE__ === true;
   }
+
+  // Dentro de app nativo ou do navegador interno de WhatsApp/Instagram/Facebook não dá para instalar.
+  var isWebview = (isIOS && !/Safari\/[\d.]+/.test(ua)) || /\bwv\b|WebView|FBAN|FBAV|Instagram|WhatsApp/i.test(ua);
 
   function isSnoozed() {
     if (store(DONE_KEY) === '1') return true;
@@ -187,7 +191,7 @@
 
   window.mfInstallPrompt = function () { if (!isStandalone()) show(); };
 
-  if (!isMobile || isStandalone()) return;
+  if (!isMobile || isWebview || isStandalone()) return;
 
   // Confere as condições de tempos em tempos (os apps trocam de tela sem recarregar).
   var readySince = 0;
