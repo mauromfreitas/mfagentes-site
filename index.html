@@ -78,7 +78,7 @@
   }
   .hero-lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 36px; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; }
-  .hero-note { font-size: 0.95rem; color: var(--ink-soft); }
+  .hero-note { margin: 14px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
 
   /* Checklist visual */
   .board {
@@ -157,7 +157,12 @@
   .app-top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
   .app-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--paper-2); flex: none; }
   .app-icon svg { width: 26px; height: 26px; stroke: var(--sage-deep); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .app h3 { font-size: 1.35rem; margin: 0; letter-spacing: -0.02em; }
+  .app h4 { font-size: 1.35rem; margin: 0; letter-spacing: -0.02em; }
+  .apps-group + .apps-group { margin-top: 64px; }
+  .apps-group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin: 0 0 22px; padding-bottom: 14px; border-bottom: 2px solid var(--sage-light); }
+  .apps-group-head h3 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 0; }
+  .apps-group-head p { margin: 0; color: var(--ink-soft); }
+  .app { scroll-margin-top: 24px; } .apps-group { scroll-margin-top: 24px; }
   .app-for { font-size: 0.92rem; color: var(--ink-soft); }
   .app > p { color: var(--ink-soft); margin: 0 0 22px; }
   .app-price { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--paper-2); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
@@ -269,9 +274,9 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
             Conversar no WhatsApp
           </a>
-          <span class="hero-note">A primeira conversa é sem compromisso.</span>
+          <a class="btn btn-ghost" href="#apps">Ver nossos apps prontos</a>
         </div>
-        <a class="hero-video-link" href="#apps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Veja nossos apps em 20 segundos</a>
+        <p class="hero-note">A primeira conversa é sem compromisso.</p>
       </div>
 
       <div class="board" aria-label="Exemplo de semana organizada">
@@ -341,103 +346,15 @@
     <div class="wrap">
       <div class="section-head">
         <h2 id="apps">Veja o que já construímos</h2>
-        <p>Aplicativos simples de usar, gratuitos ou com assinatura acessível, alguns já disponíveis e outros em piloto. É o mesmo cuidado que levamos para os projetos dos nossos clientes.</p>
+        <p>Sistemas desenhados e construídos por nós, do zero. Se o seu negócio precisa de uma ferramenta sob medida como estas, nós criamos.</p>
       </div>
-      <div class="apps-grid">
-        <article class="app">
-          <div class="app-top">
-            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h4"/></svg></span>
-            <div><h3>Nosso Bolso Junto</h3><span class="app-for">Finanças do casal e da família</span></div>
-          </div>
-          <p>Contas, receitas e vencimentos da casa em um só lugar, com lembretes antes do dia de pagar e um painel do mês para os dois acompanharem juntos.</p>
-          <button type="button" class="app-video" data-video="nossobolso" data-title="Nosso Bolso Junto" data-cta="Experimente grátis" data-cta-href="https://nossobolso.mfagentes.com.br">
-            <span class="app-video-thumb"><img src="/videos/nossobolso.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
-            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
-          </button>
-          <div class="app-price">
-            <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
-            <a class="btn btn-ghost" href="https://nossobolso.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
-          </div>
-        </article>
-        <article class="app">
-          <div class="app-top">
-            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"/></svg></span>
-            <div><h3>Nosso Lar Junto</h3><span class="app-for">Rotina da casa compartilhada</span></div>
-          </div>
-          <p>Tarefas divididas, lista de compras e manutenções da casa com lembrete. Com IA: fotografe a geladeira, os armários ou a lavanderia e a Despensa monta o inventário do que tem em casa; fotografe a nota fiscal e o Nota Fácil guarda os dados e avisa antes de a garantia vencer.</p>
-          <button type="button" class="app-video" data-video="nossolar" data-title="Nosso Lar Junto" data-cta="Experimente grátis" data-cta-href="https://nossolar.mfagentes.com.br">
-            <span class="app-video-thumb"><img src="/videos/nossolar.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
-            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
-          </button>
-          <div class="app-price">
-            <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
-            <a class="btn btn-ghost" href="https://nossolar.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
-          </div>
-        </article>
-        <article class="app">
-          <div class="app-top">
-            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h16v2a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7zM2 11h2M20 11h2M9 4c0 1.5-1 1.5-1 3M13 4c0 1.5-1 1.5-1 3M17 4c0 1.5-1 1.5-1 3"/></svg></span>
-            <div><h3>Cozinha Compartilhada</h3><span class="app-for">Receitas da família e dos amigos</span></div>
-          </div>
-          <p>Guarde suas receitas com lista de compras e modo de preparo, compartilhe pelo WhatsApp ou na comunidade e salve na sua cozinha as receitas favoritas de outras pessoas. Assinantes colam o texto de uma receita e a IA monta tudo sozinha.</p>
-          <button type="button" class="app-video" data-video="cozinhacompartilhada" data-title="Cozinha Compartilhada" data-cta="Começar grátis" data-cta-href="https://cozinhacompartilhada.mfagentes.com.br">
-            <span class="app-video-thumb"><img src="/videos/cozinhacompartilhada.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
-            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
-          </button>
-          <div class="app-price">
-            <div class="price"><strong>Grátis</strong><small>assinatura R$ 6,99/mês: sem anúncios + 10 receitas com IA</small></div>
-            <a class="btn btn-ghost" href="https://cozinhacompartilhada.mfagentes.com.br" target="_blank" rel="noopener">Começar grátis</a>
-          </div>
-        </article>
-        <article class="app">
-          <div class="app-top">
-            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4l5 5M20 4l-5 5M4 20l5-5M20 20l-5-5M9 9h6v6H9z"/></svg></span>
-            <div><h3>Reduz Fácil</h3><span class="app-for">Fotos, PDFs e vídeos mais leves</span></div>
-          </div>
-          <p>Deixe fotos, PDFs, vídeos e áudios no tamanho certo para o gov.br, WhatsApp, e-mail ou inscrições em poucos cliques. Também junta fotos em PDF e converte fotos do iPhone para JPG. Tudo no navegador: seus arquivos não saem do aparelho.</p>
-          <button type="button" class="app-video" data-video="reduzfacil" data-title="Reduz Fácil" data-cta="Começar grátis" data-cta-href="https://reduz.mfagentes.com.br">
-            <span class="app-video-thumb"><img src="/videos/reduzfacil.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
-            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
-          </button>
-          <div class="app-price">
-            <div class="price"><strong>Grátis</strong><small>Pro a partir de R$ 9,99 por 7 dias</small></div>
-            <a class="btn btn-ghost" href="https://reduz.mfagentes.com.br" target="_blank" rel="noopener">Começar grátis</a>
-          </div>
-        </article>
-        <article class="app">
-          <div class="app-top">
-            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V7l6-3v17M10 21V9l10 3v9M3 21h18M7 9v.01M7 12v.01M7 15v.01M14 14v.01M17 14v.01M14 17v.01M17 17v.01"/></svg></span>
-            <div><h3>Carteira Predial</h3><span class="app-for">Para síndicos profissionais</span></div>
-          </div>
-          <p>Manutenções, obrigações legais, contratos e visitas de todos os prédios da sua carteira em um só painel, com alertas antes de cada vencimento. Importe e exporte tudo em Excel.</p>
-          <button type="button" class="app-video" data-video="carteirapredial" data-title="Carteira Predial" data-cta="Quero participar do piloto" data-cta-href="https://wa.me/551131974420?text=Ol%C3%A1!%20Sou%20s%C3%ADndico%20e%20quero%20participar%20do%20piloto%20da%20Carteira%20Predial.">
-            <span class="app-video-thumb"><img src="/videos/carteirapredial.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
-            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
-          </button>
-          <div class="app-price">
-            <span class="badge">Em breve, piloto em andamento</span>
-            <a class="btn btn-ghost" href="https://wa.me/551131974420?text=Ol%C3%A1!%20Sou%20s%C3%ADndico%20e%20quero%20participar%20do%20piloto%20da%20Carteira%20Predial." target="_blank" rel="noopener">Quero participar do piloto</a>
-          </div>
-        </article>
-        <article class="app">
-          <div class="app-top">
-            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>
-            <div><h3>Estoque Inteligente</h3><span class="app-for">Para pequenos negócios</span></div>
-          </div>
-          <p>Fotografe a nota fiscal, a prateleira ou até o caderno onde você anota tudo hoje: a IA lê os itens para você confirmar. O estoque se atualiza sozinho, a tela inicial mostra o que fazer no dia e a lista de compras sai pronta, com o custo estimado.</p>
-          <button type="button" class="app-video" data-video="estoque" data-title="Estoque Inteligente" data-cta="Pedir acesso" data-cta-href="https://estoque.mfagentes.com.br/register">
-            <span class="app-video-thumb"><img src="/videos/estoque.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
-            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
-          </button>
-          <div class="app-price">
-            <span class="badge">Acesso por lista de espera</span>
-            <a class="btn btn-ghost" href="https://estoque.mfagentes.com.br/register" target="_blank" rel="noopener">Pedir acesso</a>
-          </div>
-        </article>
-        <article class="app">
+      <div class="apps-group" id="apps-negocios">
+        <div class="apps-group-head"><h3>Para o seu negócio</h3><p>Ferramentas para organizar estoque, números e rotinas de pequenas empresas.</p></div>
+        <div class="apps-grid">
+        <article class="app" id="app-painel">
           <div class="app-top">
             <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 16v-3M12 16V8M17 16v-5"/></svg></span>
-            <div><h3>Painel Inteligente</h3><span class="app-for">Painéis a partir de planilhas</span></div>
+            <div><h4>Painel Inteligente</h4><span class="app-for">Painéis a partir de planilhas</span></div>
           </div>
           <p>Envie a planilha de vendas, contas ou estoque, mesmo com várias abas, e a IA monta o painel com indicadores, metas, comparação com o mês anterior e insights em texto. No mês seguinte, é só trocar o arquivo. Compartilhe com o sócio ou o contador por link e exporte em PDF. <a href="https://painel.mfagentes.com.br/exemplo" target="_blank" rel="noopener">Veja um painel de exemplo</a>.</p>
           <button type="button" class="app-video" data-video="painel" data-title="Painel Inteligente" data-cta="Experimente grátis" data-cta-href="https://painel.mfagentes.com.br">
@@ -449,6 +366,102 @@
             <a class="btn btn-ghost" href="https://painel.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
           </div>
         </article>
+        <article class="app" id="app-estoque">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>
+            <div><h4>Estoque Inteligente</h4><span class="app-for">Para pequenos negócios</span></div>
+          </div>
+          <p>Fotografe a nota fiscal, a prateleira ou até o caderno onde você anota tudo hoje: a IA lê os itens para você confirmar. O estoque se atualiza sozinho, a tela inicial mostra o que fazer no dia e a lista de compras sai pronta, com o custo estimado.</p>
+          <button type="button" class="app-video" data-video="estoque" data-title="Estoque Inteligente" data-cta="Pedir acesso" data-cta-href="https://estoque.mfagentes.com.br/register">
+            <span class="app-video-thumb"><img src="/videos/estoque.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <span class="badge">Acesso por lista de espera</span>
+            <a class="btn btn-ghost" href="https://estoque.mfagentes.com.br/register" target="_blank" rel="noopener">Pedir acesso</a>
+          </div>
+        </article>
+        <article class="app" id="app-carteirapredial">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V7l6-3v17M10 21V9l10 3v9M3 21h18M7 9v.01M7 12v.01M7 15v.01M14 14v.01M17 14v.01M14 17v.01M17 17v.01"/></svg></span>
+            <div><h4>Carteira Predial</h4><span class="app-for">Para síndicos profissionais</span></div>
+          </div>
+          <p>Manutenções, obrigações legais, contratos e visitas de todos os prédios da sua carteira em um só painel, com alertas antes de cada vencimento. Importe e exporte tudo em Excel.</p>
+          <button type="button" class="app-video" data-video="carteirapredial" data-title="Carteira Predial" data-cta="Quero participar do piloto" data-cta-href="https://wa.me/551131974420?text=Ol%C3%A1%21%20Quero%20participar%20do%20piloto%20da%20Carteira%20Predial.%0AMeu%20nome%3A%20%0AQuantos%20pr%C3%A9dios%20administro%3A%20%0ACidade%3A%20">
+            <span class="app-video-thumb"><img src="/videos/carteirapredial.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <span class="badge">Em breve, piloto em andamento</span>
+            <a class="btn btn-ghost" href="https://wa.me/551131974420?text=Ol%C3%A1%21%20Quero%20participar%20do%20piloto%20da%20Carteira%20Predial.%0AMeu%20nome%3A%20%0AQuantos%20pr%C3%A9dios%20administro%3A%20%0ACidade%3A%20" target="_blank" rel="noopener">Quero participar do piloto</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="apps-group" id="apps-casa">
+        <div class="apps-group-head"><h3>Para casa e dia a dia</h3><p>Apps grátis ou com assinatura acessível para organizar a vida em casa.</p></div>
+        <div class="apps-grid">
+        <article class="app" id="app-nossobolso">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M7 15h4"/></svg></span>
+            <div><h4>Nosso Bolso Junto</h4><span class="app-for">Finanças do casal e da família</span></div>
+          </div>
+          <p>Contas, receitas e vencimentos da casa em um só lugar, com lembretes antes do dia de pagar e um painel do mês para os dois acompanharem juntos.</p>
+          <button type="button" class="app-video" data-video="nossobolso" data-title="Nosso Bolso Junto" data-cta="Experimente grátis" data-cta-href="https://nossobolso.mfagentes.com.br">
+            <span class="app-video-thumb"><img src="/videos/nossobolso.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
+            <a class="btn btn-ghost" href="https://nossobolso.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
+          </div>
+        </article>
+        <article class="app" id="app-nossolar">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"/></svg></span>
+            <div><h4>Nosso Lar Junto</h4><span class="app-for">Rotina da casa compartilhada</span></div>
+          </div>
+          <p>Tarefas divididas, lista de compras e manutenções da casa com lembrete. Com IA: fotografe a geladeira, os armários ou a lavanderia e a Despensa monta o inventário do que tem em casa; fotografe a nota fiscal e o Nota Fácil guarda os dados e avisa antes de a garantia vencer.</p>
+          <button type="button" class="app-video" data-video="nossolar" data-title="Nosso Lar Junto" data-cta="Experimente grátis" data-cta-href="https://nossolar.mfagentes.com.br">
+            <span class="app-video-thumb"><img src="/videos/nossolar.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <div class="price"><strong>14 dias grátis</strong><small>depois R$ 6,99/mês</small></div>
+            <a class="btn btn-ghost" href="https://nossolar.mfagentes.com.br" target="_blank" rel="noopener">Experimente grátis</a>
+          </div>
+        </article>
+        <article class="app" id="app-cozinha">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h16v2a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7zM2 11h2M20 11h2M9 4c0 1.5-1 1.5-1 3M13 4c0 1.5-1 1.5-1 3M17 4c0 1.5-1 1.5-1 3"/></svg></span>
+            <div><h4>Cozinha Compartilhada</h4><span class="app-for">Receitas da família e dos amigos</span></div>
+          </div>
+          <p>Guarde suas receitas com lista de compras e modo de preparo, compartilhe pelo WhatsApp ou na comunidade e salve na sua cozinha as receitas favoritas de outras pessoas. Assinantes colam o texto de uma receita e a IA monta tudo sozinha.</p>
+          <button type="button" class="app-video" data-video="cozinhacompartilhada" data-title="Cozinha Compartilhada" data-cta="Começar grátis" data-cta-href="https://cozinhacompartilhada.mfagentes.com.br">
+            <span class="app-video-thumb"><img src="/videos/cozinhacompartilhada.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <div class="price"><strong>Grátis</strong><small>assinatura R$ 6,99/mês: sem anúncios + 10 receitas com IA</small></div>
+            <a class="btn btn-ghost" href="https://cozinhacompartilhada.mfagentes.com.br" target="_blank" rel="noopener">Começar grátis</a>
+          </div>
+        </article>
+        <article class="app" id="app-reduzfacil">
+          <div class="app-top">
+            <span class="app-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4l5 5M20 4l-5 5M4 20l5-5M20 20l-5-5M9 9h6v6H9z"/></svg></span>
+            <div><h4>Reduz Fácil</h4><span class="app-for">Fotos, PDFs e vídeos mais leves</span></div>
+          </div>
+          <p>Deixe fotos, PDFs, vídeos e áudios no tamanho certo para o gov.br, WhatsApp, e-mail ou inscrições em poucos cliques. Também junta fotos em PDF e converte fotos do iPhone para JPG. Tudo no navegador: seus arquivos não saem do aparelho.</p>
+          <button type="button" class="app-video" data-video="reduzfacil" data-title="Reduz Fácil" data-cta="Começar grátis" data-cta-href="https://reduz.mfagentes.com.br">
+            <span class="app-video-thumb"><img src="/videos/reduzfacil.jpg" alt="" width="54" height="96" loading="lazy"><span class="app-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></span>
+            <span><strong>Veja em 20 segundos</strong><small>Assista ao vídeo com som</small></span>
+          </button>
+          <div class="app-price">
+            <div class="price"><strong>Grátis</strong><small>Pro a partir de R$ 9,99 por 7 dias</small></div>
+            <a class="btn btn-ghost" href="https://reduz.mfagentes.com.br" target="_blank" rel="noopener">Começar grátis</a>
+          </div>
+        </article>
+        </div>
       </div>
     </div>
   </section>
